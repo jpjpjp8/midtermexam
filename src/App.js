@@ -79,7 +79,7 @@ function App() {
     else if (oper === "*") {
       setDisp(parseInt(num1) * parseInt(num2));
     }
-    else if (oper === "/") {
+    else if (oper === "÷") {
       setDisp(parseInt(num1) / parseInt(num2));
     } else { 
       setDisp("ERROR");
