@@ -89,11 +89,9 @@ function App() {
       setDisp(parseInt(num1) % parseInt(num2));
     }
     else if (oper === "^") {
-      setDisp(parseInt(num1) * parseInt(num2));
-    }
-    else if (oper === "DEL") {
       setDisp(parseInt(num1) ** parseInt(num2));
-    }    
+    }
+   
     else { 
       setDisp("ERROR");
     }
