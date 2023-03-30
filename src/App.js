@@ -22,6 +22,9 @@ function Display({display}) {
   );
 }
 
+
+
+
 function App() {
   
   const[disp, setDisp] = useState(0);
@@ -79,9 +82,19 @@ function App() {
     else if (oper === "*") {
       setDisp(parseInt(num1) * parseInt(num2));
     }
-    else if (oper === "÷") {
+    else if (oper === "") {
       setDisp(parseInt(num1) / parseInt(num2));
-    } else { 
+    } 
+    else if (oper === "%") {
+      setDisp(parseInt(num1) % parseInt(num2));
+    }
+    else if (oper === "^") {
+      setDisp(parseInt(num1) * parseInt(num2));
+    }
+    else if (oper === "DEL") {
+      setDisp(parseInt(num1) ** parseInt(num2));
+    }    
+    else { 
       setDisp("ERROR");
     }
 
@@ -118,6 +131,11 @@ function App() {
     <Button label={0} onClick={numberClickHandler}/>  
     <Button label={"="} onClick={equalClickHandler}/>
     <Button label={"÷"} onClick={operatorClickHandler}/>
+    <Button label={"%"} onClick={operatorClickHandler}/>
+    <Button label={"^"} onClick={operatorClickHandler}/>
+    <Button label={"DEL"} onClick={operatorClickHandler}/>
+    <Button label={"ON/OFF"} onClick={operatorClickHandler}/>
+
     
     
     </div>
