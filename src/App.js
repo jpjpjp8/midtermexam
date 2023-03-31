@@ -27,16 +27,15 @@ function Display({display}) {
 
 function App() {
   
-  const[disp, setDisp] = useState(0);
+  const[disp, setDisp] = useState("INPUT CODE");
   const[num1, setNum1] = useState(null);
-  const[oper, setOper] = useState(null);
-  const[num2, setNum2] = useState(null);
+
   
   const numberClickHandler = (e) => {
     e.preventDefault();
     
     const value = e.target.innerHTML;
-    if(oper === null){
+
       if(num1 === null){
         setNum1(value);
         setDisp(value);
@@ -44,68 +43,35 @@ function App() {
         setNum1(num1+value);
         setDisp(num1+value);
       }
-    } else {
-      if(num2 === null){
-        setNum2(value);
-        setDisp(value);
-      } else {
-        setNum2(num2+value);
-        setDisp(num2+value);
-      }
-      
-    console.log(num1 + " | " + oper + " | " + num2);
-    }
-    
 
-  }
-  
-
-  const operatorClickHandler = (e) => {
-    e.preventDefault();
-    const value = e.target.innerHTML;
-    setOper(value);
-    setDisp(value);
+        
+    console.log(num1);
+ 
     
-    console.log(num1 + " | " + oper + " | " + num2);
-  }
+} 
+
+
   
 
   const equalClickHandler = (e) => {
     e.preventDefault();
     
-    if (oper === "+") {
-      setDisp(parseInt(num1) + parseInt(num2));
+    if (num1 === "1234567890") {
+      setDisp("SUCCESS");
     }
-    else if (oper === "-") {
-      setDisp(parseInt(num1) - parseInt(num2));
+    else{
+      setDisp("INVALID");
     }
-    else if (oper === "*") {
-      setDisp(parseInt(num1) * parseInt(num2));
-    }
-    else if (oper === "") {
-      setDisp(parseInt(num1) / parseInt(num2));
-    } 
-    else if (oper === "%") {
-      setDisp(parseInt(num1) % parseInt(num2));
-    }
-    else if (oper === "^") {
-      setDisp(parseInt(num1) ** parseInt(num2));
-    }
-   
-    else { 
-      setDisp("ERROR");
-    }
-
 
     
   }
   
   const clearClickHandler = (e) => {
     e.preventDefault();
-    setDisp(0);
+    setDisp('INPUT CODE');
     setNum1(null);
-    setNum2(null);
-    setOper(null);
+
+
   }
   
   return (
@@ -113,26 +79,22 @@ function App() {
   
       <Display display={disp}/>
   <div className={"ButtonContainer"}>
-    <Button label={7} onClick={numberClickHandler}/>
-    <Button label={8} onClick={numberClickHandler}/>
     <Button label={9} onClick={numberClickHandler}/>
-    <Button label={"+"} onClick={operatorClickHandler}/>
-    <Button label={4} onClick={numberClickHandler}/>
-    <Button label={5} onClick={numberClickHandler}/>
+    <Button label={8} onClick={numberClickHandler}/>
+    <Button label={7} onClick={numberClickHandler}/>
+
     <Button label={6} onClick={numberClickHandler}/>
-    <Button label={"-"} onClick={operatorClickHandler}/>
-    <Button label={1} onClick={numberClickHandler}/>
-    <Button label={2} onClick={numberClickHandler}/>
+    <Button label={5} onClick={numberClickHandler}/>
+    <Button label={4} onClick={numberClickHandler}/>
+
     <Button label={3} onClick={numberClickHandler}/>
-    <Button label={"*"} onClick={operatorClickHandler}/>
-    <Button label={"C"} onClick={clearClickHandler}/>
+    <Button label={2} onClick={numberClickHandler}/>
+    <Button label={1} onClick={numberClickHandler}/>
+
     <Button label={0} onClick={numberClickHandler}/>  
-    <Button label={"="} onClick={equalClickHandler}/>
-    <Button label={"÷"} onClick={operatorClickHandler}/>
-    <Button label={"%"} onClick={operatorClickHandler}/>
-    <Button label={"^"} onClick={operatorClickHandler}/>
-    <Button label={"DEL"} onClick={operatorClickHandler}/>
-    <Button label={"ON/OFF"} onClick={operatorClickHandler}/>
+    <Button label={"RESET"} onClick={clearClickHandler}/>
+    <Button label={"ENTER"} onClick={equalClickHandler}/>
+
 
     
     
