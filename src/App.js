@@ -56,7 +56,7 @@ function App() {
   const equalClickHandler = (e) => {
     e.preventDefault();
     
-    if (num1 === "1234567890") {
+    if (num1 === "1234567890" || "2018001301") {
       setDisp("SUCCESS");
     }
     else{
