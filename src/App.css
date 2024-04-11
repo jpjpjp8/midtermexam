@@ -1,11 +1,16 @@
 
 .Mendoza {
-  width: 200px; 
-  height: auto;
-  border-radius: 10%; 
+  width: 500px;
+  height: 500px; 
   margin-right: 50px;
   margin-bottom: 50px;
   background: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
 }
 
-
+.Mendoza p {
+  text-align: center;
+}
