@@ -4,7 +4,7 @@ import './App.css';
 
 function Mendoza({ hw }) {
   return (
-      <div>
+      <div className="Mendoza">
         <p>{hw}</p>
       </div>
   );
@@ -13,8 +13,8 @@ function Mendoza({ hw }) {
 
 export default function App() {
   const [resume, setResume] = useState({
-    hw: "hello world",}
-  );
+    hw: "hello world",
+  });
 
   return (
     <div className="App">
