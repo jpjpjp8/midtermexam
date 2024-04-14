@@ -1,16 +1,73 @@
+body {
+  max-width: 500px;
+  margin: auto;
+}
 
 .Mendoza {
-  width: 500px;
-  height: 500px; 
-  margin-right: 50px;
-  margin-bottom: 50px;
-  background: orange;
+  height: 500px;
+  line-height: 500px;
+  margin:auto;
+  text-align: center;
+  background-color: #FF9500;
+  border: 1px solid #1C1C1C;
+}
+
+.Mendoza2 {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+}
+
+.Mendoza2 > div {
+  flex: 100%;
+}
+
+.item5 { grid-area: five; }
+.item6 { grid-area: six; }
+.item7 { grid-area: seven; }
+.item8 { grid-area: eight; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas: "five six seven seven"
+                      "five six seven seven"
+                      "five six eight eight"
+                      "five six eight eight";
+  background-color: #2196F3;
+}
+
+.grid-container > div {
+  font-size: 40px;
+  background-color: blueviolet;
+  margin: 1px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-container {
+  display: flex;
+  background-color: #2196F3;
+}
+
+.flex-container-left {
+  flex-direction: column;
+  display: flex;
+  flex: 1;
+}
+
+.flex-container-right {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.flex-container > div > div {
+  flex: 1;
+  font-size: 40px;
+  background-color: blueviolet;
+  margin: 1px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 50px;
-}
-
-.Mendoza p {
-  text-align: center;
 }
