@@ -1,48 +1,91 @@
+import { useState } from "react";
+import logo from './logo.svg';
 import './App.css';
 
-function Mendoza({text}) {
+
+
+function Button({label, onClick}) {
   return (
-    <div className="Mendoza">
-      {text}
+    <button className="Calculator" onClick={onClick}>
+  {label}
+    </button>
+  );
+}
+  
+function Display({display}) {
+  return (
+    <div className="CalcDisplay">
+      {display}
     </div>    
   );
 }
 
-
-
-
-
-function Mendoza2() {
+function App() {
+  
+  const[disp, setDisp] = useState(0);
+  
+  const numberClickHandler = (e) => {
+    e.preventDefault();
+    const value = e.target.innerHTML;
+  
+    console.log(value);
+    setDisp(value);
+  
+  }
+  
+  const operatorClickHandler = (e) => {
+    e.preventDefault();
+    const value = e.target.innerHTML;
+    
+    console.log(value);
+    setDisp(value);
+    
+  }
+  
+  const equalClickHandler = (e) => {
+    e.preventDefault();
+    const value = e.target.innerHTML;
+    
+    console.log(value);
+    setDisp(value);
+  
+  }
+  
+  const clearClickHandler = (e) => {
+    e.preventDefault();
+    const value = e.target.innerHTML;
+    
+    console.log(value);
+    setDisp(value);
+  }
+  
   return (
-    <div class="Mendoza2">
-      <div class="flex-container">
-        <div class="flex-container-left">
-          <div class="item1">1</div>
-          <div class="item2">2</div>
-        </div>
-        <div class="flex-container-right">
-          <div class="item3">3</div>  
-          <div class="item4">4</div>
-        </div>
-      </div>  
-      <div class="grid-container">
-      <div class="item5">5</div>
-      <div class="item6">6</div>
-      <div class="item7">7</div>  
-      <div class="item8">8</div>
-      </div>  
-    </div>   
-  );
-}
-
-
-
-
-export default function App() {
-  return (
-    <div>
-      <Mendoza text={"JP Mendoza"}/>
-      <Mendoza2 />
+  <div className="Calculator">
+  
+  <Display display={0}/>
+  <div className={"ButtonContainer"}>
+    <Button label={7} onClick={numberClickHandler}/>
+    <Button label={8} onClick={numberClickHandler}/>
+    <Button label={9} onClick={numberClickHandler}/>
+    <Button label={"+"} onClick={operatorClickHandler}/>
+    <Button label={4} onClick={numberClickHandler}/>
+    <Button label={5} onClick={numberClickHandler}/>
+    <Button label={6} onClick={numberClickHandler}/>
+    <Button label={"-"} onClick={operatorClickHandler}/>
+    <Button label={1} onClick={numberClickHandler}/>
+    <Button label={2} onClick={numberClickHandler}/>
+    <Button label={3} onClick={numberClickHandler}/>
+    <Button label={"*"} onClick={operatorClickHandler}/>
+    <Button label={"C"} onClick={clearClickHandler}/>
+    <Button label={0} onClick={numberClickHandler}/>  
+    <Button label={"="} onClick={equalClickHandler}/>
+    <Button label={"÷"} onClick={operatorClickHandler}/>
+    
+    
     </div>
+   </div>
+    
   );
 }
+
+export default App;
